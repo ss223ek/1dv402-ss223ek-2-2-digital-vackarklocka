@@ -110,11 +110,22 @@ namespace _1dv402_ss223ek_2_2
             }
 
             //nu har vi den nya tiden, är det dags att larma?
-
-
-            return false;
+            return (Hour==AlarmHour && Minute==AlarmMinute);
         }
 
+        public string ToString() 
+        {
+            // håller en plats med nollor i timmar
+            // slår samman efter typomvandling
+            //http://msdn.microsoft.com/en-us/library/0c899ak8%28v=vs.110%29.aspx#Specifier0
+            string h, m, ah, am, total;
+            h = Hour.ToString();
+            m = Minute.ToString("00");
+            ah = AlarmHour.ToString();
+            am=AlarmMinute.ToString("00");
+            total=String.Format("{0}:{1} ({2}:{3})",h,m,ah,am);
+            return total;
+        }
 
 
     }
