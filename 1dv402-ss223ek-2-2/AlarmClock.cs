@@ -115,7 +115,8 @@ namespace _1dv402_ss223ek_2_2
 
         public string ToString() 
         {
-            // håller en plats med nollor i timmar
+            // håller en plats med nollor i minuter
+            // timmar kan bli ental till ett tecken
             // slår samman efter typomvandling
             //http://msdn.microsoft.com/en-us/library/0c899ak8%28v=vs.110%29.aspx#Specifier0
             string h, m, ah, am, total;
