@@ -113,20 +113,36 @@ namespace _1dv402_ss223ek_2_2
             return (Hour==AlarmHour && Minute==AlarmMinute);
         }
 
-        public string ToString() 
+        public override string ToString()   //skapar ny innebörd för ToString för alla AlarmClock-objekt
         {
-            // håller en plats med nollor i minuter så det alltid är två tecken
-            // timmar kan bli ental till ett tecken
-            // slår samman efter typomvandling
-            //http://msdn.microsoft.com/en-us/library/0c899ak8%28v=vs.110%29.aspx#Specifier0
             string h, m, ah, am, total;
-            h = Hour.ToString();
-            m = Minute.ToString("00");
+            h = Hour.ToString();        //använder den ToString-metod som gäller för INT
+            m = Minute.ToString("00");  //håller två platser, fyller ev med inledande nolla
             ah = AlarmHour.ToString();
-            am=AlarmMinute.ToString("00");
-            total=String.Format("{0,2}:{1} ({2}:{3})",h,m,ah,am); // högerjustera med två platser för timme
+            am = AlarmMinute.ToString("00");
+            total = String.Format("{0,2}:{1} ({2}:{3})", h, m, ah, am); 
             return total;
         }
+
+        //Skrivet innan jag såg föreläsning 12
+        // går det lika bra att bara använda samma namn för att "override"
+        // Fråga Annie
+
+
+        //public string ToString() 
+        //{
+        //    // håller en plats med nollor i minuter så det alltid är två tecken
+        //    // timmar kan bli ental till ett tecken
+        //    // slår samman efter typomvandling
+        //    //http://msdn.microsoft.com/en-us/library/0c899ak8%28v=vs.110%29.aspx#Specifier0
+        //    string h, m, ah, am, total;
+        //    h = Hour.ToString();
+        //    m = Minute.ToString("00");
+        //    ah = AlarmHour.ToString();
+        //    am=AlarmMinute.ToString("00");
+        //    total=String.Format("{0,2}:{1} ({2}:{3})",h,m,ah,am); // högerjustera med två platser för timme
+        //    return total;
+        //}
 
 
     }
